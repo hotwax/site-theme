@@ -1,0 +1,6 @@
+#page > .prospect_layout_container{
+    direction: ltr;
+}
+#page > .prospect_layout_container > *{
+    direction: rtl;
+}
