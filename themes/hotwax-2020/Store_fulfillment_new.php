@@ -119,10 +119,6 @@ html {
   text-shadow: none;
 }
 
-::selection {
-  background: #b3d4fc;
-  text-shadow: none;
-}
 
 /*
  * A better looking default horizontal rule
