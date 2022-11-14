@@ -3618,3 +3618,177 @@ ul {
 		margin-top: 35px !important;
 	}
 }
+/* global style */
+
+html, body {
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	background-color: var(--surface);
+	color: var(--font-color-body);
+}
+
+body {
+	/* device var */
+
+	/* mobile */
+	--iPhone-width: 243px;
+	--iPhone-shadow-width: 394px;
+	--iPhone-shadow-height: 605px;
+
+	--iPad-width: 404px;
+	--iPad-shadow-width: 0px;
+	--iPad-shadow-height: 0px;
+
+	--Mac-width: 110vw;
+	--Mac-height: calc(var(--Mac-width) * .61); /* replace with aspect ratio property */
+
+	/* brand var */
+	--red: #EC2227;
+	--m-shadow: 0px 0px 17px rgba(0, 0, 0, 0.06), 
+				13px 13px 28px rgba(0, 0, 0, 0.09);
+				
+	--font-body: "Open Sans", sans-serif;
+	--font-special: "Montserrat", sans-serif;
+	--font-color-body: #222;
+
+	/* layout var */
+	--grid-gap: 100px;
+
+	--image-zindex: 2;
+	--below-image: 1;
+	--above-image: 3;
+}
+
+img {
+	position: relative;
+	z-index: var(--image-zindex);
+	max-width: 100%;
+}
+
+.content {
+	display: grid;
+	margin-top: 60px;
+}
+
+/* home styles */
+#home {
+	margin: auto;
+	padding: 0 20px 50px 20px;
+}
+
+#home h3 {
+	font: 700 18px/2rem var(--font-special);
+	color: var(--red);
+}
+
+#home p {
+	font-family: var(--font-body);
+	font-weight: 300;
+	font-size: 18px;
+	line-height: 2rem;
+}
+
+
+/* mobile only css */
+@media only screen and (max-width: 980px) {
+	#home {
+		overflow-x: hidden;
+	}
+
+	.iPhone, .iPad{
+		margin: auto;
+	}
+
+	h3{
+		margin-top: 16px;
+	}
+	
+	.content{
+		grid-auto-flow: row;
+		grid-row-gap: 24px;
+	}
+
+	.Mac-container {
+		overflow: visible;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+/* device styling start*/
+.iPhone, .iPad {
+	position: relative;
+} 
+
+.iPhone{
+	max-width: var(--iPhone-width);
+}
+
+.iPad {
+	max-width: var(--iPad-width);
+}
+.Mac {
+	max-width: var(--Mac-width);
+	height: var(--Mac-height);
+	position: absolute;
+}
+
+.Mac-container {
+	height: var(--Mac-height);
+	position: relative;
+}
+
+.iPhone::before , .iPad::before {
+	background-repeat: no-repeat;
+	content: '';
+	position: absolute;
+	display: block;
+	z-index: var(--below-image);
+}
+
+.iPhone::before {
+	background-image: url(https://www.hotwax.co/wp-content/uploads/2021/08/iOS_Shadow-1.png);
+	width: var(--iPhone-shadow-width);
+	height: var(--iPhone-shadow-height);
+	background-size: var(--iPhone-shadow-width) var(--iPhone-shadow-height);
+	top: -6px;
+	left: -12px;
+}
+
+.iPad::before {
+	background-image: url(https://www.hotwax.co/wp-content/uploads/2021/08/iPad_Shadow.png);
+	width: var(--iPad-shadow-width);
+	height: var(--iPad-shadow-height);
+	background-size: var(--iPad-shadow-width) var(--iPad-shadow-height);
+}
+
+.content{
+	display: grid;
+	margin-top: 60px;
+}
+
+
+@media only screen and (min-width: 980px) {
+
+	.content{
+		margin-top: 100px;
+	}
+
+	.feature{
+		width: 352px;
+	}
+
+	body {
+	/* desktop */
+	--iPhone-width: 387px;
+	--iPhone-shadow-width: 628px;
+	--iPhone-shadow-height: 963px;
+
+	--iPad-width: 861px;
+	--iPad-shadow-width: 979px;
+	--iPad-shadow-height: 779px;
+
+	--Mac-width: 1060px;
+	--Mac-height: 650px;
+	}
+}
